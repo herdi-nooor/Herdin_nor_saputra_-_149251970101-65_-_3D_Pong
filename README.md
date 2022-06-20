@@ -1,2 +1,5 @@
-# Herdin_nor_saputra_-_149251970101-65_-_3D_Pong
-Submission for "agate game course"
+# 3D Pong Game
+Herdin nor saputra - 149251970101-65
+
+<sub>Submission for "agate game course"</sub>
+
