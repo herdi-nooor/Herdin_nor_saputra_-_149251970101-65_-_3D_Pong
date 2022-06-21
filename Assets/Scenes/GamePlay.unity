@@ -775,7 +775,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 230056476826589141, guid: 4d58e0dcdf07d3283b7c8c818b43c7c7, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 230056476826589141, guid: 4d58e0dcdf07d3283b7c8c818b43c7c7, type: 3}
       propertyPath: m_Materials.Array.size
