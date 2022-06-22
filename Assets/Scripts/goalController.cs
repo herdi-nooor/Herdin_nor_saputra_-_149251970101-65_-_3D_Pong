@@ -16,10 +16,15 @@ public class goalController : MonoBehaviour
             score.AddPoint(p);
             spawn.removeBall(collision.gameObject);
         }
+        if(player.GetComponent<paddleController>().PinaltiPoin == 3)
+        {
+            score.AddCountLosingPlayer(1);
+        }
     } 
 
     public void disableGoal()
     {
         GetComponent<Collider>().isTrigger = false;
+        GetComponent<Renderer>().enabled = true;
     }
 }

@@ -9,8 +9,8 @@ public class paddleController : MonoBehaviour
     public int pemain;
     private int speed = 20;
     private Rigidbody rig;
-    private int pinaltiPoin = 0;
-    private scoreManager scoreManager;
+    private int pinaltiPoin = 0, poin;
+    private GameObject scoreManager;
     private GameObject goal;
 
 
@@ -24,14 +24,14 @@ public class paddleController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(pinaltiPoin + " : pemain " + pemain);
         // check point if over
         if(pinaltiPoin == 3)
         {
             // disable player if lose
             goal.GetComponent<goalController>().disableGoal();
             speed =  0;
-            scoreManager.AddCountLosingPlayer(1);
+            pinaltiPoin = 0;
+            scoreManager = GameObject.Find("scoreManager");
         }
         else
         {
@@ -41,17 +41,7 @@ public class paddleController : MonoBehaviour
 
     }
 
-    public int PinaltiPoin
-    {
-        get
-        {
-            return this.pinaltiPoin;
-        }
-        set
-        {
-            this.pinaltiPoin = value;
-        }
-    }
+
 
     //funtion for get input from player
     private Vector3 GetInput() 
@@ -85,5 +75,26 @@ public class paddleController : MonoBehaviour
     private void MoveObject(Vector3 movement) 
     { 
         rig.velocity = movement; 
+    }
+    public int PinaltiPoin
+    {
+        get
+        {
+            return this.pinaltiPoin;
+        }
+        set
+        {
+            this.pinaltiPoin = value;
+        }
+    }public int Poin
+    {
+        get
+        {
+            return this.poin;
+        }
+        set
+        {
+            this.poin = value;
+        }
     }
 }

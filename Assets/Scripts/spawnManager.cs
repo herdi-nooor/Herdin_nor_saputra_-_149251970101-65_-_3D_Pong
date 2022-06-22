@@ -54,12 +54,5 @@ public class spawnManager : MonoBehaviour
         ballList.Remove(ball); 
         Destroy(ball);
     } 
- 
-    public void removeAllBall() 
-    { 
-        while (ballList.Count > 0) 
-        { 
-            removeBall(ballList[0]); 
-        } 
-    } 
+
 }

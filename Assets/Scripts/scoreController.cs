@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class scoreController : MonoBehaviour
 {
     public Text p1score, p2score, p3score, p4score;
-    private GameObject player;
+    public GameObject player1, player2, player3, player4;
 
     private void Update() 
     { 
@@ -15,12 +15,18 @@ public class scoreController : MonoBehaviour
 
     IEnumerator updateScore()
     {
-        player = GameObject.Find("player1");
-        int p = player.GetComponent<paddleController>().PinaltiPoin;
-        p1score.text = p.ToString();
-        // p2score.text = (player[1].GetComponent<paddleController>.PinaltiPoin).ToString();
-        // p3score.text = (player3.GetComponent<paddleController>.PinaltiPoin).ToString();
-        // p4score.text = (player4.GetComponent<paddleController>.PinaltiPoin).ToString();
+        int p1 = player1.GetComponent<paddleController>().Poin;
+        p1score.text = p1.ToString();
+
+        int p2 = player2.GetComponent<paddleController>().Poin;
+        p2score.text = p2.ToString();
+
+        int p3 = player3.GetComponent<paddleController>().Poin;
+        p3score.text = p3.ToString();
+
+        int p4 = player4.GetComponent<paddleController>().Poin;
+        p4score.text = p4.ToString();
+
         yield return null;
     }
 

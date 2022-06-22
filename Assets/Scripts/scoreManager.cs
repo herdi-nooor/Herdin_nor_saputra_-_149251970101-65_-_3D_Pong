@@ -9,6 +9,7 @@ public class scoreManager : MonoBehaviour
     // method untuk menambah point pemain 
     private GameObject player;
     private int playerCount;
+    private spawnManager spawn;
     public GameObject panelGameOver;
 
     // menambah pinalti poin ke pemain yang kebobolan
@@ -16,15 +17,16 @@ public class scoreManager : MonoBehaviour
     { 
         player = GameObject.Find(p);
         player.GetComponent<paddleController>().PinaltiPoin += 1;
+        player.GetComponent<paddleController>().Poin += 1;
     } 
  
     // menghitung jumlah pemain yang kalah
     public void AddCountLosingPlayer(int intcre)
     {
         playerCount += intcre;
+        Debug.Log(playerCount);
         if (playerCount == 3)
         {
-            
             GameOver();
         }
     }
