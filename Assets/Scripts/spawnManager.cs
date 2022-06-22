@@ -6,13 +6,13 @@ public class spawnManager : MonoBehaviour
 {
     public int maxPowerUpAmount; 
     public int spawnInterval; 
-    public List<GameObject> powerUpTemplateList;
+    public List<GameObject> ballTemplateList;
     private float timer;
-    private List<GameObject> powerUpList; 
+    private List<GameObject> ballList; 
      
     private void Start() 
     { 
-        powerUpList = new List<GameObject>(); 
+        ballList = new List<GameObject>(); 
         timer = 0;
     } 
     private void Update() 
@@ -22,7 +22,7 @@ public class spawnManager : MonoBehaviour
         if (timer > spawnInterval) 
         { 
             // mengecek jika jumlah powerUp sudah maksimal
-            if (powerUpList.Count < maxPowerUpAmount) 
+            if (ballList.Count < maxPowerUpAmount) 
             { 
                 GenerateRandomPowerUp(); 
             } 
@@ -35,31 +35,31 @@ public class spawnManager : MonoBehaviour
     // method for spawn powerUP in area spawn
     public void GenerateRandomPowerUp() 
     { 
-        if (powerUpList.Count >= maxPowerUpAmount) 
+        if (ballList.Count >= maxPowerUpAmount) 
         { 
             return; 
         } 
  
-        int randomIndex = Random.Range(0, powerUpTemplateList.Count); 
+        int randomIndex = Random.Range(0, ballTemplateList.Count); 
  
-        GameObject powerUp = Instantiate(powerUpTemplateList[randomIndex]); 
-        powerUp.SetActive(true); 
+        GameObject ball = Instantiate(ballTemplateList[randomIndex]); 
+        ball.SetActive(true); 
  
-        powerUpList.Add(powerUp); 
+        ballList.Add(ball); 
     } 
 
     // method for delete powerUp in list
-    public void removeBall(GameObject powerUp) 
+    public void removeBall(GameObject ball) 
     { 
-        powerUpList.Remove(powerUp); 
-        Destroy(powerUp);
+        ballList.Remove(ball); 
+        Destroy(ball);
     } 
  
     public void removeAllBall() 
     { 
-        while (powerUpList.Count > 0) 
+        while (ballList.Count > 0) 
         { 
-            removeBall(powerUpList[0]); 
+            removeBall(ballList[0]); 
         } 
     } 
 }

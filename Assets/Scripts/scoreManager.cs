@@ -1,22 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class scoreManager : MonoBehaviour
 {
-    public ballController ball;
-    public paddleController player;
-    private int countPlayer;
-
     // method untuk menambah point pemain 
-    public void AddPoint(int increment) 
+    private GameObject player;
+    private int playerCount;
+    public GameObject panelGameOver;
+
+    // menambah pinalti poin ke pemain yang kebobolan
+    public void AddPoint(string p) 
     { 
-        player.PinaltiPoin += increment;
+        player = GameObject.Find(p);
+        player.GetComponent<paddleController>().PinaltiPoin += 1;
     } 
  
-    // method jika permainan selesao dan mengembalikan ke scene "Main menu"
+    // menghitung jumlah pemain yang kalah
+    public void AddCountLosingPlayer(int intcre)
+    {
+        playerCount += intcre;
+        if (playerCount == 3)
+        {
+            
+            GameOver();
+        }
+    }
+
+    // method jika permainan selesai dan mengembalikan ke scene "Main menu"
     public void GameOver() 
     { 
-        SceneManager.LoadScene("Main Menu");
+        panelGameOver.SetActive(true);
     }
+
 }

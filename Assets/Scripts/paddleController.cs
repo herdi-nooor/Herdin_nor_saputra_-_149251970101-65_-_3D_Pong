@@ -4,34 +4,49 @@ using UnityEngine;
 
 public class paddleController : MonoBehaviour
 {
-    private int speed = 20;
     public KeyCode rightKey;
     public KeyCode leftKey;
+    public int pemain;
+    private int speed = 20;
     private Rigidbody rig;
-    private int pinaltiPoin;
+    private int pinaltiPoin = 0;
+    private scoreManager scoreManager;
+    private GameObject goal;
+
 
     // Start is called before the first frame update
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
+        goal = GameObject.Find("goalP" + pemain);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        // moveing object  width input
-        MoveObject(GetInput());
-
+        Debug.Log(pinaltiPoin + " : pemain " + pemain);
         // check point if over
-        if(pinaltiPoin == 15)
+        if(pinaltiPoin == 3)
         {
-            
+            // disable player if lose
+            goal.GetComponent<goalController>().disableGoal();
+            speed =  0;
+            scoreManager.AddCountLosingPlayer(1);
+        }
+        else
+        {
+            // moveing object  width input
+            MoveObject(GetInput());
         }
 
     }
 
     public int PinaltiPoin
     {
+        get
+        {
+            return this.pinaltiPoin;
+        }
         set
         {
             this.pinaltiPoin = value;
@@ -41,15 +56,28 @@ public class paddleController : MonoBehaviour
     //funtion for get input from player
     private Vector3 GetInput() 
     { 
-        if (Input.GetKey(rightKey))
-        { 
-            return new Vector3 (speed, 0, 0); 
-        } 
-        else if (Input.GetKey(leftKey))
-        { 
-            return new Vector3 (-speed, 0, 0); 
-        } 
-         
+        if (pemain == 1 || pemain == 4)
+        {
+            if (Input.GetKey(rightKey))
+            { 
+                return new Vector3 (speed, 0, 0); 
+            } 
+            else if (Input.GetKey(leftKey))
+            { 
+                return new Vector3 (-speed, 0, 0); 
+            } 
+        }
+        else if(pemain == 2 || pemain == 3)
+        {
+            if (Input.GetKey(rightKey))
+            { 
+                return new Vector3 (0, 0, speed); 
+            } 
+            else if (Input.GetKey(leftKey))
+            { 
+                return new Vector3 (0, 0, -speed); 
+            }  
+        }
         return Vector3.zero; 
     } 
 

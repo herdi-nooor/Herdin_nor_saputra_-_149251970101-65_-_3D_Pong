@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3235621294208435182}
   - component: {fileID: 3235621294208435181}
   - component: {fileID: 3235621294208435180}
+  - component: {fileID: -1565822849702243805}
   m_Layer: 0
   m_Name: goalP
   m_TagString: goal
@@ -89,9 +90,24 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3235621294208435170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 13400000, guid: 604b39fa079f44134a5e2d5609c228c8, type: 2}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1565822849702243805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235621294208435170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84dc01106e6499284608f65b250689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  spawn: {fileID: 0}
+  player: {fileID: 0}
