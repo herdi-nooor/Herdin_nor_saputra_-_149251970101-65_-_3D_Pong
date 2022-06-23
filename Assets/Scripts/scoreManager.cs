@@ -40,6 +40,7 @@ public class scoreManager : MonoBehaviour
 
     public string WhoWin()
     {
+        Debug.Log(winner);
         if(!(loser.Contains("player1")))
         {
             return winner = "player 1";

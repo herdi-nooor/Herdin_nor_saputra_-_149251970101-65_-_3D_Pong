@@ -8,6 +8,7 @@ public class mainMenu : MonoBehaviour
     // method untuk exit
     public void ExitGame() 
     { 
+        Debug.Log("exit");
         Application.Quit();
     }
     
