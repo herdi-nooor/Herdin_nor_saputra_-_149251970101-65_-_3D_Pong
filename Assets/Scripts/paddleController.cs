@@ -7,12 +7,11 @@ public class paddleController : MonoBehaviour
     public KeyCode rightKey;
     public KeyCode leftKey;
     public int pemain;
-    private int speed = 20;
+    private int speed = 16;
     private Rigidbody rig;
     private int pinaltiPoin = 0, poin;
     private GameObject scoreManager;
     private GameObject goal;
-
 
     // Start is called before the first frame update
     private void Start()
@@ -40,8 +39,6 @@ public class paddleController : MonoBehaviour
         }
 
     }
-
-
 
     //funtion for get input from player
     private Vector3 GetInput() 

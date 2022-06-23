@@ -10,7 +10,10 @@ public class scoreManager : MonoBehaviour
     private GameObject player;
     private int playerCount;
     private spawnManager spawn;
+    private scoreController scoreController;
     public GameObject panelGameOver;
+    private List<string> loser;
+    private string winner;
 
     // menambah pinalti poin ke pemain yang kebobolan
     public void AddPoint(string p) 
@@ -21,19 +24,42 @@ public class scoreManager : MonoBehaviour
     } 
  
     // menghitung jumlah pemain yang kalah
-    public void AddCountLosingPlayer(int intcre)
+    public void AddCountLosingPlayer(string lose)
     {
-        playerCount += intcre;
-        Debug.Log(playerCount);
+        loser.Add(lose);
+        playerCount += 1;
         if (playerCount == 3)
         {
+            foreach (var item in this.loser)
+            {
+                Debug.Log(item);
+            }
             GameOver();
+        }
+    }
+
+    public string WhoWin()
+    {
+        if(!(loser.Contains("player1")))
+        {
+            return winner = "player 1";
+        }else if (!(this.loser.Contains("player2")))
+        {
+            return winner = "player 2";
+        }else if (!(loser.Contains("player3")))
+        {
+            return winner = "player 3";
+        }else
+        {
+            return winner = "player 4";
         }
     }
 
     // method jika permainan selesai dan mengembalikan ke scene "Main menu"
     public void GameOver() 
     { 
+        Debug.Log("winner " + WhoWin());
+        scoreController.winner.text = WhoWin();
         panelGameOver.SetActive(true);
     }
 

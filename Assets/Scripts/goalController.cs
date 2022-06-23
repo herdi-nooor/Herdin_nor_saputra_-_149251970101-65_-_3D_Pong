@@ -7,10 +7,11 @@ public class goalController : MonoBehaviour
     public scoreManager score; 
     public spawnManager spawn;
     public GameObject player;
+    private string p;
  
     private void OnTriggerEnter(Collider collision) 
     { 
-        string p = player.name;
+        p = player.name;
         if (collision.GetComponent<Collider>().tag == "ball") 
         { 
             score.AddPoint(p);
@@ -18,7 +19,8 @@ public class goalController : MonoBehaviour
         }
         if(player.GetComponent<paddleController>().PinaltiPoin == 3)
         {
-            score.AddCountLosingPlayer(1);
+            Debug.Log(p);
+            score.AddCountLosingPlayer(p);
         }
     } 
 
