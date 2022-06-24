@@ -111,3 +111,5 @@ MonoBehaviour:
   score: {fileID: 0}
   spawn: {fileID: 0}
   player: {fileID: 0}
+  physicMaterial: {fileID: 13400000, guid: 604b39fa079f44134a5e2d5609c228c8, type: 2}
+  p: 

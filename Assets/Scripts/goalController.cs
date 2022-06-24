@@ -7,6 +7,8 @@ public class goalController : MonoBehaviour
     public scoreManager score; 
     public spawnManager spawn;
     public GameObject player;
+    public PhysicMaterial physicMaterial;
+
     [HideInInspector] public string p;
  
     private void OnTriggerEnter(Collider collision) 
@@ -27,5 +29,8 @@ public class goalController : MonoBehaviour
     {
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Renderer>().enabled = true;
+        GetComponent<Collider>().material = physicMaterial;
+        player.GetComponent<Renderer>().enabled = false;
+        player.GetComponent<Collider>().enabled = false;
     }
 }
