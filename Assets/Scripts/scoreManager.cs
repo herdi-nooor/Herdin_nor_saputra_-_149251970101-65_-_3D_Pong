@@ -45,7 +45,7 @@ public class scoreManager : MonoBehaviour
         }else if (!(loser.Contains("player3")))
         {
             winner = "player 3";
-        }else
+        }else if (!(loser.Contains("player4")))
         {
             winner = "player 4";
         }

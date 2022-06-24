@@ -7,7 +7,7 @@ public class paddleController : MonoBehaviour
     public KeyCode rightKey;
     public KeyCode leftKey;
     public int pemain;
-    [HideInInspector] public int speed = 16;
+    [HideInInspector] public int speed;
     [HideInInspector] public Rigidbody rig;
     private int pinaltiPoin = 0, poin;
     // [HideInInspector] public GameObject scoreManager;
@@ -18,6 +18,7 @@ public class paddleController : MonoBehaviour
     {
         rig = GetComponent<Rigidbody>();
         goal = GameObject.Find("goalP" + pemain);
+        speed = 6;
     }
 
     // Update is called once per frame

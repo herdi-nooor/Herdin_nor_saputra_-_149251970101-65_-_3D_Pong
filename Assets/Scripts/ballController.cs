@@ -12,6 +12,8 @@ public class ballController : MonoBehaviour
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
-        rig.velocity = speed;
+        rig.AddForce(speed.x, speed.y, speed.z, ForceMode.Impulse);
     }
+
+
 }

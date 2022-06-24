@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Text: "gerakkan paddle nya untuk mengghalangi bola melewati gawang \n\nuntuk
     menggerakkan player 1 gunakan tombol \"N\" dan\"M\",\nuntuk menggerakken player
     2 gunakan tombol \"F\" dan\"V\",\nuntuk menggerakken player 3 gunakan tombol
-    \"Q\" dan\"A\",\nuntuk menggerakken player 4 gunakan tombol \"<-\"(arah panah
-    kiri) dan\"->\"(arah panah kanan) ,\n\njadilah orang terakhir yang survive Kalahkan
+    \"<-\"(arah panah kiri) dan\"->\"(arah panah kanan),\nuntuk menggerakken player
+    4 gunakan tombol \"Q\" dan\"A\"\n\njadilah orang terakhir yang survive Kalahkan
     musuh dengan cara membobolkan 15 bola ke gawangnya"
 --- !u!222 &81629217
 CanvasRenderer:
@@ -499,7 +499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 64.6}
+  m_AnchoredPosition: {x: 0, y: 64.600006}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115608377
