@@ -7,7 +7,7 @@ public class goalController : MonoBehaviour
     public scoreManager score; 
     public spawnManager spawn;
     public GameObject player;
-    private string p;
+    [HideInInspector] public string p;
  
     private void OnTriggerEnter(Collider collision) 
     { 
@@ -17,10 +17,9 @@ public class goalController : MonoBehaviour
             score.AddPoint(p);
             spawn.removeBall(collision.gameObject);
         }
-        if(player.GetComponent<paddleController>().PinaltiPoin == 3)
+        if(player.GetComponent<paddleController>().PinaltiPoin == 15)
         {
-            Debug.Log(p);
-            score.AddCountLosingPlayer(p);
+            score.AddCountLosingPlayer(1, p);
         }
     } 
 

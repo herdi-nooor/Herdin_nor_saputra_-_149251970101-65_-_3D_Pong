@@ -8,7 +8,7 @@ public class spawnManager : MonoBehaviour
     public int spawnInterval; 
     public List<GameObject> ballTemplateList;
     private float timer;
-    private List<GameObject> ballList; 
+    [HideInInspector] public List<GameObject> ballList; 
      
     private void Start() 
     { 

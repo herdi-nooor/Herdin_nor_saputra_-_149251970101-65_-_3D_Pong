@@ -7,11 +7,11 @@ public class paddleController : MonoBehaviour
     public KeyCode rightKey;
     public KeyCode leftKey;
     public int pemain;
-    private int speed = 16;
-    private Rigidbody rig;
+    [HideInInspector] public int speed = 16;
+    [HideInInspector] public Rigidbody rig;
     private int pinaltiPoin = 0, poin;
-    private GameObject scoreManager;
-    private GameObject goal;
+    // [HideInInspector] public GameObject scoreManager;
+    [HideInInspector] public GameObject goal;
 
     // Start is called before the first frame update
     private void Start()
@@ -24,13 +24,13 @@ public class paddleController : MonoBehaviour
     private void Update()
     {
         // check point if over
-        if(pinaltiPoin == 3)
+        if(pinaltiPoin == 15)
         {
             // disable player if lose
             goal.GetComponent<goalController>().disableGoal();
             speed =  0;
             pinaltiPoin = 0;
-            scoreManager = GameObject.Find("scoreManager");
+            // scoreManager = GameObject.Find("scoreManager");
         }
         else
         {
@@ -73,17 +73,9 @@ public class paddleController : MonoBehaviour
     { 
         rig.velocity = movement; 
     }
-    public int PinaltiPoin
-    {
-        get
-        {
-            return this.pinaltiPoin;
-        }
-        set
-        {
-            this.pinaltiPoin = value;
-        }
-    }public int Poin
+
+    // getter setter
+    public int Poin 
     {
         get
         {
@@ -94,4 +86,16 @@ public class paddleController : MonoBehaviour
             this.poin = value;
         }
     }
+    public int PinaltiPoin 
+    {
+        get
+        {
+            return this.pinaltiPoin;
+        }
+        set
+        {
+            this.pinaltiPoin = value;
+        }
+    }
+    
 }

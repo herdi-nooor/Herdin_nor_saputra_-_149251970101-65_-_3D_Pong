@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 7, y: 0, z: 7}
+  rig: {fileID: 0}
 --- !u!1 &57402960
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +439,7 @@ MonoBehaviour:
   - {fileID: 621737213}
   - {fileID: 2081194187}
   - {fileID: 56055194}
+  ballList: []
 --- !u!4 &90954274
 Transform:
   m_ObjectHideFlags: 0
@@ -553,15 +555,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963887, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_Color.b
-      value: 0.18431373
+      value: 0.19215687
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963887, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_Color.g
-      value: 0.83137256
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963887, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_Color.r
-      value: 0.7254902
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
@@ -682,9 +684,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d249be50ff717fc1083ce8cde5be26f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightKey: 119
-  leftKey: 115
+  rightKey: 102
+  leftKey: 118
   pemain: 2
+  speed: 16
+  rig: {fileID: 0}
+  pinaltiPoin: 0
+  poin: 0
+  scoreManager: {fileID: 0}
+  goal: {fileID: 0}
 --- !u!1001 &545341449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -807,6 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: -7, y: 0, z: 7}
+  rig: {fileID: 0}
 --- !u!54 &621737216
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1667,15 +1676,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963887, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_Color.b
-      value: 0.2509804
+      value: 0.2627451
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963887, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_Color.g
-      value: 0.8627451
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963887, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_Color.r
-      value: 0.1882353
+      value: 0.18039216
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
@@ -1766,6 +1775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: -7, y: 0, z: -7}
+  rig: {fileID: 0}
 --- !u!54 &1188269247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2164,9 +2174,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d249be50ff717fc1083ce8cde5be26f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightKey: 119
-  leftKey: 115
+  rightKey: 113
+  leftKey: 97
   pemain: 3
+  speed: 16
+  rig: {fileID: 0}
+  pinaltiPoin: 0
+  poin: 0
+  scoreManager: {fileID: 0}
+  goal: {fileID: 0}
 --- !u!1 &1309181235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,7 +2217,9 @@ MonoBehaviour:
   p2score: {fileID: 2030405815}
   p3score: {fileID: 180878525}
   p4score: {fileID: 1701623160}
-  winner: {fileID: 418002471}
+  wining: {fileID: 0}
+  score: {fileID: 1309181235}
+  win: 
   player1: {fileID: 829196272}
   player2: {fileID: 517018744}
   player3: {fileID: 1302592695}
@@ -2232,7 +2250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37021329849c0222098064bea68862fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerCount: 0
+  spawn: {fileID: 0}
   panelGameOver: {fileID: 57402960}
+  loser: []
 --- !u!4 &1318673348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6319420129032777100, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
@@ -2576,6 +2598,14 @@ PrefabInstance:
     - target: {fileID: 6319420129032777095, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
       propertyPath: pemain
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319420129032777095, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
+      propertyPath: leftKey
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319420129032777095, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
+      propertyPath: rightKey
+      value: 276
       objectReference: {fileID: 0}
     - target: {fileID: 6319420129032777098, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3013,6 +3043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 7, y: 0, z: -7}
+  rig: {fileID: 0}
 --- !u!54 &2081194190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3297,7 +3328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963884, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -274.99997
+      value: -275
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963884, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3347,6 +3378,14 @@ PrefabInstance:
     - target: {fileID: 6319420129032777095, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
       propertyPath: pemain
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319420129032777095, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
+      propertyPath: leftKey
+      value: 109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319420129032777095, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
+      propertyPath: rightKey
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 6319420129032777098, guid: 8cccac6a3ba76d0998a6e0f666abc9ec, type: 3}
       propertyPath: m_Materials.Array.data[0]

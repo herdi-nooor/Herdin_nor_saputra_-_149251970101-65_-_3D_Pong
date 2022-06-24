@@ -6,7 +6,7 @@ public class ballController : MonoBehaviour
 {
 
     public Vector3 speed;
-    private Rigidbody rig;
+    [HideInInspector] public Rigidbody rig;
     
     // Start is called before the first frame update
     private void Start()
