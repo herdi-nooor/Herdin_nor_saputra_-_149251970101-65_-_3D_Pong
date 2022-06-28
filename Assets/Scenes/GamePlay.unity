@@ -156,7 +156,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56055194}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0091d4600d5895e788f30b48dc9f98be, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 56055194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.67, y: 1.16, z: -4.71}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1177777998}
   m_RootOrder: 0
@@ -234,11 +234,11 @@ Rigidbody:
   m_GameObject: {fileID: 56055194}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.001
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
 --- !u!114 &56055200
@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0582a79120b35c0b1b5a636b190d14f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 0, z: 10}
+  forceDirection: {x: 5, y: 0, z: 5}
+  speed: 5
   rig: {fileID: 0}
 --- !u!1 &57402960
 GameObject:
@@ -587,6 +588,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &237712930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 237712932}
+  - component: {fileID: 237712931}
+  m_Layer: 0
+  m_Name: doom (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &237712931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237712930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &237712932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237712930}
+  m_LocalRotation: {x: 0.7071058, y: -0, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: 0.01, y: 6.47, z: 0.02}
+  m_LocalScale: {x: 11.05724, y: 10.829549, z: 0.27665213}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &311615739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3235621294208435171, guid: 56fc358e9f45ef404ada7f63da62cecf, type: 3}
@@ -886,7 +931,7 @@ Transform:
   m_GameObject: {fileID: 621737213}
   m_LocalRotation: {x: -0, y: -0.00000028312203, z: -0, w: 1}
   m_LocalPosition: {x: 4.96, y: 1.19, z: -5.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1177777998}
   m_RootOrder: 2
@@ -903,7 +948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0582a79120b35c0b1b5a636b190d14f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: -10, y: 0, z: 10}
+  forceDirection: {x: -5, y: 0, z: 5}
+  speed: 5
   rig: {fileID: 0}
 --- !u!54 &621737216
 Rigidbody:
@@ -914,11 +960,11 @@ Rigidbody:
   m_GameObject: {fileID: 621737213}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.001
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
 --- !u!135 &621737217
@@ -928,7 +974,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621737213}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0091d4600d5895e788f30b48dc9f98be, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1900,7 +1946,7 @@ Transform:
   m_GameObject: {fileID: 1188269244}
   m_LocalRotation: {x: -0, y: -0.0000009685755, z: -0, w: -1}
   m_LocalPosition: {x: 4.92, y: 1.19, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1177777998}
   m_RootOrder: 3
@@ -1917,7 +1963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0582a79120b35c0b1b5a636b190d14f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: -10, y: 0, z: -10}
+  forceDirection: {x: -5, y: 0, z: -5}
+  speed: 5
   rig: {fileID: 0}
 --- !u!54 &1188269247
 Rigidbody:
@@ -1928,11 +1975,11 @@ Rigidbody:
   m_GameObject: {fileID: 1188269244}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.001
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
 --- !u!135 &1188269248
@@ -1942,7 +1989,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188269244}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0091d4600d5895e788f30b48dc9f98be, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3245,7 +3292,7 @@ Transform:
   m_GameObject: {fileID: 2081194187}
   m_LocalRotation: {x: -0, y: 0.0000004023313, z: -0, w: 1}
   m_LocalPosition: {x: -5, y: 1.19, z: 5.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1177777998}
   m_RootOrder: 1
@@ -3262,7 +3309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0582a79120b35c0b1b5a636b190d14f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 0, z: -10}
+  forceDirection: {x: 5, y: 0, z: -5}
+  speed: 5
   rig: {fileID: 0}
 --- !u!54 &2081194190
 Rigidbody:
@@ -3273,11 +3321,11 @@ Rigidbody:
   m_GameObject: {fileID: 2081194187}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.001
+  m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
 --- !u!135 &2081194191
@@ -3287,7 +3335,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081194187}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0091d4600d5895e788f30b48dc9f98be, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3548,7 +3596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963884, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -275
+      value: -274.99997
       objectReference: {fileID: 0}
     - target: {fileID: 1433956979978963884, guid: 8e4e9025e647e416db9a5e762a5cab6b, type: 3}
       propertyPath: m_AnchoredPosition.y
