@@ -31,10 +31,8 @@ public class scoreController : MonoBehaviour
         p4score.text = "P4\n" + p4.ToString();
 
 
-        if (!(score.GetComponent<scoreManager>().panelGameOver.activeInHierarchy))
+        if (score.GetComponent<scoreManager>().panelGameOver.activeInHierarchy)
         {
-            Debug.Log("scor handelling");
-        }else{
             ending();
         }
 

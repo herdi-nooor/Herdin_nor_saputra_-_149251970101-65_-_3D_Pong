@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class ballController : MonoBehaviour
 {
-
-    public Vector3 speed;
+    public Vector3 forceDirection;
+    public int speed;
     [HideInInspector] public Rigidbody rig;
-    
+
     // Start is called before the first frame update
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
-        rig.AddForce(speed.x, speed.y, speed.z, ForceMode.Impulse);
+        rig.AddForce(forceDirection.x, forceDirection.y, forceDirection.z, ForceMode.Impulse);
+        Debug.Log(rig.velocity.magnitude);
     }
 
+    private void Update() {
+        rig = GetComponent<Rigidbody>();
+        // menjaga speed bola menjadi constan/tetap
+        rig.velocity = rig.velocity.normalized * speed;
+    }
 
+    // mencegah bola memantul apabila sudah menyentuh lantai 
+    // dengan cara mengatifkan freezePositionY di constrain
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.name == "ground")
+        {
+            rig.constraints = RigidbodyConstraints.FreezePositionY;
+        }
+    }
 }
