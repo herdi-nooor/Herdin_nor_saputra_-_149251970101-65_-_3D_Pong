@@ -8,7 +8,6 @@ public class goalController : MonoBehaviour
     public spawnManager spawn;
     public GameObject player;
     public PhysicMaterial physicMaterial;
-
     [HideInInspector] public string p;
  
     private void OnTriggerEnter(Collider collision) 

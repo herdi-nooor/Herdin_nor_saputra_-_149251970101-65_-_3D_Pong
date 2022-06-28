@@ -9,7 +9,7 @@ public class scoreManager : MonoBehaviour
     // method untuk menambah point pemain 
     [HideInInspector] public GameObject player;
     [HideInInspector] public int playerCount;
-    [HideInInspector] public spawnManager spawn;
+    public spawnManager spawn;
     public GameObject panelGameOver;
     [HideInInspector] public List<string> loser;
     private  string winner;
@@ -56,6 +56,8 @@ public class scoreManager : MonoBehaviour
     public void GameOver() 
     { 
         panelGameOver.SetActive(true);
+        spawn.maxPowerUpAmount = 0;
+        spawn.removeAllBall();
         WhoWin();
     }
 
@@ -66,5 +68,4 @@ public class scoreManager : MonoBehaviour
             return this.winner;
         }
     }
-
 }

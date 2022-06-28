@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class paddleController : MonoBehaviour
 {
-    public KeyCode rightKey;
-    public KeyCode leftKey;
+    public KeyCode rightKey, leftKey;
     public int pemain;
     [HideInInspector] public int speed;
     [HideInInspector] public Rigidbody rig;
@@ -31,14 +30,12 @@ public class paddleController : MonoBehaviour
             goal.GetComponent<goalController>().disableGoal();
             speed =  0;
             pinaltiPoin = 0;
-            // scoreManager = GameObject.Find("scoreManager");
         }
         else
         {
             // moveing object  width input
             MoveObject(GetInput());
         }
-
     }
 
     //funtion for get input from player
@@ -98,5 +95,4 @@ public class paddleController : MonoBehaviour
             this.pinaltiPoin = value;
         }
     }
-    
 }

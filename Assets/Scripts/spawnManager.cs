@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class spawnManager : MonoBehaviour
 {
-    public int maxPowerUpAmount; 
-    public int spawnInterval; 
+    public int maxPowerUpAmount, spawnInterval; 
     public List<GameObject> ballTemplateList;
     private float timer;
     [HideInInspector] public List<GameObject> ballList; 
@@ -54,6 +53,11 @@ public class spawnManager : MonoBehaviour
         ballList.Remove(ball); 
         Destroy(ball);
     } 
-
-
+    public void removeAllBall() 
+    { 
+        while (ballList.Count > 0)
+        {
+            removeBall(ballList[0]);
+        }
+    } 
 }

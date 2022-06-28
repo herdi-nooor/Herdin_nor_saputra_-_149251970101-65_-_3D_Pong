@@ -13,7 +13,6 @@ public class ballController : MonoBehaviour
     {
         rig = GetComponent<Rigidbody>();
         rig.AddForce(forceDirection.x, forceDirection.y, forceDirection.z, ForceMode.Impulse);
-        Debug.Log(rig.velocity.magnitude);
     }
 
     private void Update() {
