@@ -11,11 +11,13 @@ public class ballController : MonoBehaviour
     [HideInInspector] public Rigidbody rig;
     private float timerSpeed;
     private bool powerSpeedUP;
+    private AudioSource sound;
 
     // Start is called before the first frame update
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
+        sound = GetComponent<AudioSource>();
         // mengatur arah pergerakan awal bola
         rig.AddForce(forceDirection.x, forceDirection.y, forceDirection.z, ForceMode.Impulse);
         powerSpeedUP = false;
@@ -52,6 +54,12 @@ public class ballController : MonoBehaviour
             rig.constraints = RigidbodyConstraints.FreezePositionY;
             rig.drag = 0;
             rig.GetComponent<Collider>().material = physicMaterial;
+        }else if (other.gameObject.tag == "ball")
+        {
+            sound.Play();
+        }else
+        {
+            return;
         }
     }
 

@@ -9,7 +9,12 @@ public class goalController : MonoBehaviour
     public GameObject player;
     public PhysicMaterial physicMaterial;
     [HideInInspector] public string p;
+    private AudioSource sound;
  
+    private void Start() 
+    {
+        sound = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider collision) 
     { 
         p = player.name;
@@ -26,6 +31,7 @@ public class goalController : MonoBehaviour
 
     public void disableGoal()
     {
+        sound.Play();
         GetComponent<Collider>().isTrigger = false;
         GetComponent<Renderer>().enabled = true;
         GetComponent<Collider>().material = physicMaterial;

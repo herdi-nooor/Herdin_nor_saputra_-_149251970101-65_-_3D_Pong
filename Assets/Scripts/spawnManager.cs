@@ -11,6 +11,7 @@ public class spawnManager : MonoBehaviour
     [HideInInspector] public List<GameObject> powerUpList;
     [HideInInspector] public float timerBall;
     [HideInInspector] public float timerPowerUp;
+    private AudioSource sound;
      
     private void Start() 
     { 
@@ -18,6 +19,7 @@ public class spawnManager : MonoBehaviour
         powerUpList = new List<GameObject>();
         timerBall = 0;
         timerPowerUp = 0;
+        sound = GetComponent<AudioSource>(); 
     } 
     private void Update() 
     { 
@@ -98,6 +100,7 @@ public class spawnManager : MonoBehaviour
     }
     public void RemovePower(GameObject power) 
     { 
+        sound.Play();
         powerUpList.Remove(power); 
         Destroy(power);
     } 

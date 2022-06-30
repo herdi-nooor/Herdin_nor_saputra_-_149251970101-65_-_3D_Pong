@@ -13,6 +13,11 @@ public class scoreManager : MonoBehaviour
     public GameObject panelGameOver;
     [HideInInspector] public List<string> loser;
     private  string winner;
+    private AudioSource sound;
+
+    private void Start() {
+        sound = GetComponent<AudioSource>();
+    }
 
     // menambah pinalti poin ke pemain yang kebobolan
     public void AddPoint(string p) 
@@ -58,6 +63,7 @@ public class scoreManager : MonoBehaviour
         panelGameOver.SetActive(true);
         spawn.maxPowerUpAmount = 0;
         spawn.removeAllBall();
+        sound.Play();
         WhoWin();
     }
 
