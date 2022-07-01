@@ -15,8 +15,19 @@ public class mainMenu : MonoBehaviour
     private void Update() {
         if (Input.GetKey(pauseKey))
         {
-            Pause();
+            if (pauseBtn.activeSelf)
+            {
+                Pause();
+            }else{
+                return;
+            }
         }
+    }
+
+    IEnumerator waitForPlay(string scene)
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
     public GameObject pauseBtn, pausePanel;
@@ -33,7 +44,7 @@ public class mainMenu : MonoBehaviour
     { 
         sound.Play();
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("GamePlay", LoadSceneMode.Single); 
+        StartCoroutine(waitForPlay("GamePlay")); 
         Debug.Log("Created By Herdin nor saputra - 149251970101-65");
     } 
     
@@ -41,14 +52,15 @@ public class mainMenu : MonoBehaviour
     public void Tutorial() 
     { 
         sound.Play();
-        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
+        StartCoroutine(waitForPlay("Tutorial"));
     }
 
      // method untuk kembali ke main menu
     public void Back() 
     {
-        sound.Play(); 
-        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single); 
+        sound.Play();
+        Time.timeScale = 1.0f; 
+        StartCoroutine(waitForPlay("Main Menu"));
     } 
 
     // replay game
@@ -56,7 +68,7 @@ public class mainMenu : MonoBehaviour
     {
         sound.Play();
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("GamePlay", LoadSceneMode.Single);
+        StartCoroutine(waitForPlay("GamePlay"));
     }
 
     // pause

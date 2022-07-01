@@ -51,9 +51,8 @@ public class ballController : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.name == "ground")
         {
-            rig.constraints = RigidbodyConstraints.FreezePositionY;
-            rig.drag = 0;
             rig.GetComponent<Collider>().material = physicMaterial;
+            rig.constraints = RigidbodyConstraints.FreezePositionY;
         }else if (other.gameObject.tag == "ball")
         {
             sound.Play();
